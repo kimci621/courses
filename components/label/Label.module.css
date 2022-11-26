@@ -1,0 +1,41 @@
+.red {
+  background: var(--red);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  color: #fff;
+}
+
+.violet {
+  border: 1px solid var(--violet);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--violet);
+}
+
+.gray {
+  background: #b3c0d9;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.green {
+  background: var(--lightgreen);
+  color: var(--green);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.red,
+.violet,
+.gray,
+.green {
+  text-align: center;
+  width: fit-content;
+  padding: 3px 6px;
+  border-radius: 20px;
+}
