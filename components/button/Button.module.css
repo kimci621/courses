@@ -1,49 +1,55 @@
 .violet {
-  width: 148px;
-  height: 35px;
-  background-color: var(--violet);
-  border: 1px solid #fff;
-  border-radius: 5px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease-out;
+    width: 148px;
+    height: 35px;
+    background-color: var(--violet);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
 }
+
 .violet:hover {
-  background-color: var(--lightgray);
-  color: var(--black);
+    background-color: var(--lightgray);
+    color: var(--black);
 }
+
 .white {
-  width: 148px;
-  height: 35px;
-  background: #fff;
-  border: 1px solid #ebebeb;
-  border-radius: 5px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 19px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-out;
-  position: relative;
+    width: 148px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+    position: relative;
 }
+
 .white:hover {
-  background-color: var(--lightgray);
+    background-color: var(--lightgray);
 }
+
 .arrowRight,
 .arrowDown {
-  position: absolute;
-  right: 0;
-  transition: all 0.3s ease-out;
+    position: absolute;
+    right: 0;
+    transition: all 0.3s ease-out;
 }
+
 .arrowRight {
-  transform: translate(-11px, 50%);
+    transform: translate(-11px, 50%);
 }
+
 .arrowDown {
-  transform: translate(-11px, 50%) rotate(90deg);
+    transform: translate(-11px, 50%) rotate(90deg);
 }
 
 .arrowHide {
-  display: none;
+    display: none;
 }

@@ -1,14 +1,14 @@
-import { IButtonProps } from "./button.types";
+import {IButtonProps} from "./button.types";
 import styles from "./Button.module.css";
 
 export const Button = ({
-  background,
-  children,
-  type,
-  className,
-  arrowPosition,
-  ...props
-}: IButtonProps): JSX.Element => {
+                         background,
+                         children,
+                         type,
+                         className,
+                         arrowPosition,
+                         ...props
+                       }: IButtonProps): JSX.Element => {
   let arrowClass;
   if (arrowPosition == "right") {
     arrowClass = styles.arrowRight;
