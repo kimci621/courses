@@ -16,6 +16,11 @@ a {
   box-sizing: border-box;
 }
 
+.over{
+  background-color: #1dc37e;
+  cursor: pointer;
+}
+
 :root {
   --black: #3b434e;
   --violet: #7653fc;

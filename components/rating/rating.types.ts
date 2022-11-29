@@ -1,3 +1,6 @@
 export interface IRating {
-  count: 1 | 2 | 3 | 4 | 5
+  count: number
+  handleClick: (arg: Event) => void
+  handleMouseEnter: (arg: Event) => void
+  handleMouseLeave: (arg: Event) => void
 }

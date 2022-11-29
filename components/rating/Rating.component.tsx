@@ -1,22 +1,31 @@
-import {useState} from "react";
-import {IRating} from "./rating.types";
-import styles from './Rating.module.css'
+import { useState } from "react";
+import { IRating } from "./rating.types";
+import styles from "./Rating.module.css";
 
-
-
-export const Rating = ({count}: IRating): JSX.Element => {
-  const [stars, setStart] = useState<JSX.Element[]>(new Array(5).fill(<></>))
-  const setRating = (prop: number) => {
-    console.log(prop)
-  }
+export const Rating = ({
+  count,
+  handleClick,
+  handleMouseEnter,
+  handleMouseLeave,
+}: IRating): JSX.Element => {
+  const [stars, setStart] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
   const updatedStars = stars.map((el: JSX.Element, i: number): JSX.Element => {
     return (
-      <img src={i < count ? '/icons/star-filled.svg' : '/icons/star.svg'} alt="star" key={i}/>
-    )
-  })
+      <img
+        src={i < count ? "/icons/star-filled.svg" : "/icons/star.svg"}
+        alt="star"
+        data-order={i + 1}
+        key={i}
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+      />
+    );
+  });
 
-  return <div className={styles.ratingWrapper}>{updatedStars.map(i => i)}</div>
+  return (
+    <div className={styles.ratingWrapper} onMouseLeave={handleMouseLeave}>
+      {updatedStars.map((i) => i)}
+    </div>
+  );
 };
-//TODO Нужно реализовать сохранение окрашенных звезд по клику и окрашивание по клику
-
