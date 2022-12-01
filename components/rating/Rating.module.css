@@ -1,5 +1,9 @@
 .ratingWrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5px;
+}
+
+.star {
+  cursor: pointer;
 }

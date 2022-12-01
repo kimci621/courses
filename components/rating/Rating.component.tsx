@@ -17,6 +17,7 @@ export const Rating = ({
         alt="star"
         data-order={i + 1}
         key={i}
+        className={styles.star}
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
       />

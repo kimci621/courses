@@ -1,5 +1,7 @@
 //imports
 import styles from "../styles/index.module.css";
+import axios from "axios";
+//components
 import { Htag } from "../components/htag/Htag.component";
 import { Button } from "../components/button/Button.component";
 import { Ptag } from "../components/ptag/Ptag.component";
@@ -12,35 +14,58 @@ type arrowPosition = "right" | "down";
 export default function Home(): JSX.Element {
   const [position, setPosition] = useState<arrowPosition>("right");
   const [count, setCount] = useState<number>(1);
+  useEffect(() => {
+    axios
+      .post("/api/test", {
+        message: "here is message",
+        name: "Flint Eastwood",
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
   const rotate = () => {
     position == "down" ? setPosition("right") : setPosition("down");
   };
 
-  function handleClick(e: Event): void {
+  function handleClick(e: MouseEvent): void {
     const el = e.target as HTMLImageElement;
     el.getAttribute("data-order")
       ? setCount(+el.getAttribute("data-order"))
       : null;
   }
 
-  function handleMouseEnter(e: Event): void {
+  function handleMouseEnter(e: MouseEvent): void {
+    console.log(count);
+
     const el = e.target as HTMLImageElement;
     const order = el.getAttribute("data-order");
     el.parentNode.querySelectorAll("img").forEach((i) => {
       i.getAttribute("data-order") <= order
-        ? i.classList.add("over")
-        : i.classList.remove("over");
+        ? (i.src = "/icons/star-filled.svg")
+        : (i.src = "/icons/star-filled-gray.svg");
     });
   }
 
-  function handleMouseLeave(e: Event): void {
+  function handleMouseLeave(e: MouseEvent): void {
     const el = e.target as HTMLImageElement;
     if (el.tagName == "IMG") {
       el.parentNode
         .querySelectorAll("img")
-        .forEach((i) => i.classList.remove("over"));
+        .forEach((i, index) =>
+          index < count
+            ? (i.src = "/icons/star-filled.svg")
+            : (i.src = "/icons/star-filled-gray.svg")
+        );
     } else {
-      el.querySelectorAll("img").forEach((i) => i.classList.remove("over"));
+      el.querySelectorAll("img").forEach((i, index) => {
+        index < count
+          ? (i.src = "/icons/star-filled.svg")
+          : (i.src = "/icons/star-filled-gray.svg");
+      });
     }
   }
 
@@ -49,8 +74,11 @@ export default function Home(): JSX.Element {
       <div className={styles.main}>
         <Rating
           count={count}
+          // @ts-expect-error
           handleClick={handleClick}
+          // @ts-expect-error
           handleMouseEnter={handleMouseEnter}
+          // @ts-expect-error
           handleMouseLeave={handleMouseLeave}
         ></Rating>
       </div>
