@@ -1,0 +1,35 @@
+.aside {
+  grid-area: aside;
+  background-color: var(--background);
+}
+
+.logo {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.logo img {
+  padding-right: 4px;
+}
+
+.logo span {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 41px;
+  color: var(--violet);
+}
+
+.logo span:last-child {
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+@media screen and (max-width: 740px) {
+  .aside {
+    display: none;
+  }
+}

@@ -7,11 +7,12 @@ import { Button } from "../components/button/Button.component";
 import { Ptag } from "../components/ptag/Ptag.component";
 import { Label } from "../components/label/Label.component";
 import { Rating } from "../components/rating/Rating.component";
+import { withLayout } from "../layouts/hoc/Hoc.component";
 import { useEffect, useState } from "react";
 //types
 type arrowPosition = "right" | "down";
 //JSX
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
   const [position, setPosition] = useState<arrowPosition>("right");
   const [count, setCount] = useState<number>(1);
   useEffect(() => {
@@ -70,18 +71,18 @@ export default function Home(): JSX.Element {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.main}>
-        <Rating
-          count={count}
-          // @ts-expect-error
-          handleClick={handleClick}
-          // @ts-expect-error
-          handleMouseEnter={handleMouseEnter}
-          // @ts-expect-error
-          handleMouseLeave={handleMouseLeave}
-        ></Rating>
-      </div>
-    </div>
+    <>
+      {/* <Rating
+        count={count}
+        // @ts-expect-error
+        handleClick={handleClick}
+        // @ts-expect-error
+        handleMouseEnter={handleMouseEnter}
+        // @ts-expect-error
+        handleMouseLeave={handleMouseLeave}
+      ></Rating> */}
+    </>
   );
 }
+
+export default withLayout(Home);

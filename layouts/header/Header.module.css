@@ -1,0 +1,10 @@
+.header {
+  grid-area: header;
+  display: none;
+}
+
+@media screen and (max-width: 740px) {
+  .header {
+    display: block;
+  }
+}

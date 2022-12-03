@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  background-color: var(--background);
+  padding-top: 40px;
+}
+
+.content {
+  grid-area: content;
+  min-height: 100%;
+  display: grid;
+  grid-template-areas: "aside main main";
+  grid-template-columns: 230px 1fr 1fr;
+  padding: 0 15px;
+}
+
+.main {
+  grid-area: main;
+}
+
+@media screen and (max-width: 740px) {
+  .content {
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+  }
+}
