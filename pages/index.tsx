@@ -9,6 +9,7 @@ import { Label } from "../components/label/Label.component";
 import { Rating } from "../components/rating/Rating.component";
 import { withLayout } from "../layouts/hoc/Hoc.component";
 import { useEffect, useState } from "react";
+import { GetStaticProps } from "next";
 //types
 type arrowPosition = "right" | "down";
 //JSX
